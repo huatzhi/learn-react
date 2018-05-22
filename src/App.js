@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css'; // webpack will handle the css import
+import './App.css';
 import Person from "./Person/Person";
 
 class App extends Component {
