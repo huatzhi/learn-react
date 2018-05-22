@@ -8,11 +8,19 @@ class App extends Component {
       { name: 'Francium', age: 99 },
       { name: 'Yui', age: 18 },
       { name: 'Azure', age: 26 },
-    ]
+    ],
+    otherState: 'some other value'
   }
 
   switchNameHandler = () => {
-    console.log('Was clicked!')
+    this.setState({
+      persons: [
+        { name: 'Xen Ace', age: 999 },
+        { name: 'Not Found', age: 18 },
+        { name: 'Mystogan', age: 26 },
+      ]
+    });
+    // this.state.persons[2].name = "AzureRedFrame"; // THIS DOES NOT WORK FOR DOM UPDATING
   }
 
   render() {
