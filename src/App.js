@@ -23,6 +23,16 @@ class App extends Component {
     // this.state.persons[2].name = "AzureRedFrame"; // THIS DOES NOT WORK FOR DOM UPDATING
   }
 
+  nameChangedHandler = (event) => {
+    this.setState({
+      persons: [
+        { name: 'Xen Ace', age: 999 },
+        { name: event.target.value, age: 18 },
+        { name: 'Mystogan', age: 26 },
+      ]
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -37,7 +47,9 @@ class App extends Component {
         <Person 
           name={this.state.persons[1].name} 
           age={this.state.persons[1].age} 
-          click={this.switchNameHandler}>
+          click={this.switchNameHandler}
+          changed={this.nameChangedHandler}
+          >
         </Person>
         <Person 
           name={this.state.persons[2].name} 
